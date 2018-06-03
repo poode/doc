@@ -13,4 +13,9 @@ use Illuminate\Http\Request;
 |
  */
 
+// Documentation route
+Route::get('/doc', function () {
+    return view('doc');
+});
+
 // TODO: JWT Auth here
