@@ -1,6 +1,9 @@
 # API documentation seems to be intricate. Not anymore!
 
-[Demo](http://htmlpreview.github.io/?https://github.com/alexgiuvara/doc/blob/ca25434b1c84e1fa85fbb2f4758d14a16e4dfa38/public/github-preview.html)
+To view the demo:
+
+- `php artisan serve`
+- `http://localhost:8000/doc`
 
 ### To generate the documentation, please visit [Apicur.io](https://www.apicur.io) and click "Try Live" button
 
