@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
-| API Routes
+| API Protected Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register API routes for your application. These
@@ -13,4 +13,5 @@ use Illuminate\Http\Request;
 |
  */
 
-// TODO: JWT Auth here
+// Authenticated user's posts
+Route::get('/posts', 'PostController@index');

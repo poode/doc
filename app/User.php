@@ -2,8 +2,9 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
+use App\Post;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,50 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    /**
+     * @return mixed
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    /**
+     * @return null|int
+     */
+    public function getId():  ? int
+    {
+        return $this->getAttributeFromArray('id');
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getName() :  ? string
+    {
+        return $this->getAttributeFromArray('name');
+    }
+    /**
+     * @param mixed $name
+     */
+    public function setName($name) : void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getEmail():  ? string
+    {
+        return $this->getAttributeFromArray('email');
+    }
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email) : void
+    {
+        $this->email = $email;
+    }
+
 }
