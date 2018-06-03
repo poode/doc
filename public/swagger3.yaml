@@ -1,0 +1,99 @@
+---
+openapi: 3.0.0
+info:
+  title: Demo
+  description: Some description
+  version: 1.0.0
+paths:
+  /posts:
+    get:
+      tags:
+      - posts
+      summary: Display posts
+      description: Display a listing of the resource.
+      responses:
+        200:
+          description: list posts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PostResource'
+      security:
+      - JWT: []
+    servers:
+    - url: http://localhost:{port}
+      description: Development server - localhost
+      variables:
+        port:
+          default: 8000
+          description: php artisan serve
+    parameters:
+    - name: include
+      in: query
+      description: include other relations
+      schema:
+        enum:
+        - user
+        type: string
+    - name: sort
+      in: query
+      description: sort the resource
+      schema:
+        enum:
+        - id
+        - -id
+        - updated_at
+        - -updated_at
+        type: string
+components:
+  schemas:
+    PostResource:
+      title: Root Type for PostResource
+      description: The root of the PostResource type's schema.
+      required:
+      - content
+      - slug
+      - title
+      type: object
+      properties:
+        title:
+          maxLength: 255
+          type: string
+          example: 'New post #2'
+        slug:
+          maxLength: 255
+          type: string
+          example: new-post-2
+        content:
+          maxLength: 65535
+          type: string
+          example: 'With content #2'
+        user:
+          $ref: '#/components/schemas/UserResource'
+    UserResource:
+      title: Root Type for UserResource
+      description: The root of the UserResource type's schema.
+      required:
+      - email
+      - name
+      type: object
+      properties:
+        name:
+          maxLength: 255
+          type: string
+          example: John
+        email:
+          maxLength: 255
+          type: string
+          example: foo@bar.baz
+  securitySchemes:
+    JWT:
+      type: http
+      scheme: bearer
+security:
+- JWT: []
+tags:
+- name: posts
+  description: Posts
