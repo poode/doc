@@ -1,9 +1,12 @@
 # API documentation seems to be intricate. Not anymore!
 
-To view the demo:
+Live demo: https://alexgiuvara.github.io
+The functional tests are very handy, as they describe:
+- the request
+- the response
+- all possible status codes (2xx,4xx)
 
-- `php artisan serve`
-- `http://localhost:8000/doc`
+This demo has a [single test](https://github.com/alexgiuvara/doc/blob/20b3820055f8874b7d178cc924cbed1992076329/tests/Feature/Controllers/PostIndexTest.php), due to lack of spare time.
 
 ### To generate the documentation, please visit [Apicur.io](https://www.apicur.io) and click "Try Live" button
 
