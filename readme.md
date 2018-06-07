@@ -1,6 +1,7 @@
 # API documentation seems to be intricate. Not anymore!
 
 Live demo: https://alexgiuvara.github.io
+
 The functional tests are very handy, as they describe:
 - the request
 - the response
