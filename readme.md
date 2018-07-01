@@ -2,8 +2,6 @@
 
 The reason that made me present this minimal API documentation is described [here](https://medium.com/@giuvara.alex/api-documentation-seems-to-be-intricate-not-anymore-657f83897acc)
 
-Live demo: https://alexgiuvara.github.io
-
 The functional tests are very handy, as they describe:
 - the request
 - the response
